@@ -32,6 +32,14 @@
             <version>3.22.0</version>
             <scope>test</scope>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/net.serenity-bdd/serenity-cucumber -->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-cucumber</artifactId>
+            <version>4.1.4</version>
+            <scope>test</scope>
+        </dependency>
+
 
     </dependencies>
 

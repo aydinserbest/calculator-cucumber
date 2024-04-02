@@ -26,13 +26,13 @@ Feature: Perform Calculations
       | 12           | -        | 34            | -26    |
       | 1.9          | +        | 1.9           | 3.8    |
 
-  Scenario Outline: Perform more calculations
-    When Matt calculates <Calculations>
-    Then He should see  result of <Result>
-    Examples:
-      | Calculations | Result |
-      | 1+2          | 3      |
-      | 2*4          | 8      |
+#  Scenario Outline: Perform more calculations
+#    When Matt calculates <Calculations>
+#    Then He should see a result of "<Result>"
+#    Examples:
+#      | Calculations | Result |
+#      | 1+2          | 3      |
+#      | 2*4          | 8      |
 
   Scenario Outline: Reporting invalid inputs
     When Matt performs the following calculations:

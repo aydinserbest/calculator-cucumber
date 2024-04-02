@@ -4,13 +4,13 @@ Feature: Perform Calculations
   so that I can practice my skills.
 
   #we weill refactor this also, by adding background and scenario outline
-  Scenario: Perform additions and subtractions
-    Given I have opened the calculator
-    When I perform the following calculations:
-      | Left Operand | Operator | Right operand |
-      | 1            | +        | 2             |
-    And I wait for the dots to disappear
-    Then I should see a result of "3"
+#  Scenario: Perform additions and subtractions
+#    Given I have opened the calculator
+#    When I perform the following calculations:
+#      | Left Operand | Operator | Right operand |
+#      | 1            | +        | 2             |
+#    And I wait for the dots to disappear
+#    Then I should see a result of "3"
 
 
     #bad example

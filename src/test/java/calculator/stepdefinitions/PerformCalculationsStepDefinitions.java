@@ -1,8 +1,10 @@
 package calculator.stepdefinitions;
 
+import calculator.actions.HistoryActions;
 import calculator.actions.calculate.CalculateActions;
 import calculator.actions.navigate.NavigateActions;
 import calculator.domain.MathOperation;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.DataTableType;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,13 +29,13 @@ public class PerformCalculationsStepDefinitions {
     public MathOperation mathOperation(Map<String, String> data) {
         return new MathOperation(
                 data.get("Left Operand"),
-                data.get("Right operand"),
+                data.get("Right Operand"),
                 data.get("Operator")
         );
     }
     @Steps
     CalculateActions calculate;
-    @When("Matt performs the following calculations:")
+    @When("^Matt (?:has performed|performs) the following calculations?:$")
     public void matt_performs_the_following_calculations(List<MathOperation> calculations) {
         calculations.forEach(
                 calculation -> calculate.theAnswerTo(calculation)
@@ -41,12 +43,18 @@ public class PerformCalculationsStepDefinitions {
     }
 
 
-
     @Then("He should see a result of {string}")
     public void he_should_see_a_result_of(String expectedValue) {
         assertThat(calculate.answer()).isEqualTo(expectedValue);
-
     }
+    @Steps
+    HistoryActions history;
+    @Then("the calculation history should contain:")
+    public void the_calculation_history_should_contain(List<Map<String, String>> calculations) {
+        List<Map<String, String>>  displayedOperations =  history.displayedOperations();
+        assertThat(displayedOperations).containsExactlyElementsOf(calculations);
+    }
+
 
 }
 

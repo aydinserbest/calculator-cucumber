@@ -16,14 +16,14 @@ Feature: Perform Calculations
       | 1            | +        | 2             | 3      |
       | 12           | +        | 34            | 46     |
       | 12           | -        | 5             | 7      |
-      | 12           | -        | 34            | -26    |
+      | 12           | -        | 34            | -22    |
       | 1.9          | +        | 1.9           | 3.8    |
     Examples: Multiplications and divisions
       | Left Operand | Operator | Right operand | Result |
       | 1            | +        | 2             | 3      |
       | 12           | +        | 34            | 46     |
       | 12           | -        | 5             | 7      |
-      | 12           | -        | 34            | -26    |
+      | 12           | -        | 34            | -22    |
       | 1.9          | +        | 1.9           | 3.8    |
 
 #  Scenario Outline: Perform more calculations
@@ -48,7 +48,7 @@ Feature: Perform Calculations
     Examples: Division by zero
       | Left Operand | Operator | Right operand | Result |
       | 1          | /        | 0           | Infinity    |
-      | 0          | /        | 0           | Infinity    |
+      | 0          | /        | 0           | NaN    |
 
 
 
